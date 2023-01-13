@@ -1,28 +1,30 @@
 //Crea dos clickListener, para los botones con id loginSuccessAsync y loginFailureAsync.
 
+const SuccessAsync = document.getElementById("loginSuccessAsync");
 function Asyncbutton() {
-  const SuccessAsync = document.getElementById("loginSuccessAsync");
-  SuccessAsync.addEventListener("click", async);
-  loginWitUsername("admin", "passwd")
-    .then((resolved) => {
-      alert(resolved);
-    })
-    .catch((rejected) => {
-      alert(rejected);
-    });
+  alert("Success Login");
 }
+SuccessAsync.addEventListener("click", Asyncbutton);
+loginWitUsername("admin", "passwd")
+  .then((resolved) => {
+    alert(resolved);
+  })
+  .catch((rejected) => {
+    alert(rejected);
+  });
 
+const FailureAsync = document.getElementById("loginFailureAsync");
 function Asyncbutton1() {
-  const FailureAsync = document.getElementById("loginFailureAsync");
-  btnLoginFailureAsync.addEventListener("click", async);
-  loginWitUsername("ososa", "2022")
-    .then((resolved) => {
-      alert(resolved);
-    })
-    .catch((rejected) => {
-      alert(rejected);
-    });
+  alert("Error Login");
 }
+FailureAsync.addEventListener("click", Asyncbutton1);
+loginWitUsername("ososa", "2022")
+  .then((resolved) => {
+    alert(resolved);
+  })
+  .catch((rejected) => {
+    alert(rejected);
+  });
 
 //
 

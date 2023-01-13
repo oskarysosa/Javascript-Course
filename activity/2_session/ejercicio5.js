@@ -5,11 +5,11 @@ const Login = {
   password: "passwd",
 };
 //llamaremos a la función para que de el resultado correcto.
+const successbutton = document.getElementById("loginSuccess");
 function successlogin() {
-  const successbutton = document.getElementById("loginSuccess");
-  successbutton.addEventListener("click", Event);
+  alert("Success Login");
 }
-successlogin.call(Login);
+successbutton.addEventListener("click", successlogin);
 
 //En el segundo crearemos un objeto login con parámetros incorrectos y llamaremos a login para que falle.
 const Login2 = {
@@ -17,8 +17,8 @@ const Login2 = {
   password: "2022",
 };
 
+const failbutton = document.getElementById("loginFailure");
 function faillogin() {
-  const failbutton = document.getElementById("loginFailure");
-  failbutton.addEventListener("click", Login);
+  alert("Error Login");
 }
-faillogin.call(Login);
+failbutton.addEventListener("click", faillogin);

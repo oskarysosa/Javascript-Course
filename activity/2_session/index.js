@@ -12,47 +12,53 @@ const Login = {
   password: "passwd",
 };
 //llamaremos a la función para que de el resultado correcto.
+const successbutton = document.getElementById("loginSuccess");
 function successlogin() {
-  const successbutton = document.getElementById("loginSuccess");
-  successbutton.addEventListener("click", Login);
+  alert("Success Login");
 }
-successlogin.call(Login);
+successbutton.addEventListener("click", successlogin);
 
 //En el segundo crearemos un objeto login con parámetros incorrectos y llamaremos a login para que falle.
 const Login2 = {
   username: "ososa",
   password: "2022",
 };
+
+const failbutton = document.getElementById("loginFailure");
 function faillogin() {
-  const failbutton = document.getElementById("loginFailure");
-  failbutton.addEventListener("click", Login);
+  alert("Error Login");
 }
-faillogin.call(Login);
+failbutton.addEventListener("click", faillogin);
+
 // Ejercicio 6
 
+const SuccessAsync = document.getElementById("loginSuccessAsync");
 function Asyncbutton() {
-  const SuccessAsync = document.getElementById("loginSuccessAsync");
-  SuccessAsync.addEventListener("click", async);
-  loginWitUsername("admin", "passwd")
-    .then((resolved) => {
-      alert(resolved);
-    })
-    .catch((rejected) => {
-      alert(rejected);
-    });
+  alert("Success Login");
 }
+SuccessAsync.addEventListener("click", Asyncbutton);
+loginWitUsername("admin", "passwd")
+  .then((resolved) => {
+    alert(resolved);
+  })
+  .catch((rejected) => {
+    alert(rejected);
+  });
 
+const FailureAsync = document.getElementById("loginFailureAsync");
 function Asyncbutton1() {
-  const FailureAsync = document.getElementById("loginFailureAsync");
-  btnLoginFailureAsync.addEventListener("click", async);
-  loginWitUsername("ososa", "2022")
-    .then((resolved) => {
-      alert(resolved);
-    })
-    .catch((rejected) => {
-      alert(rejected);
-    });
+  alert("Error Login");
 }
+FailureAsync.addEventListener("click", Asyncbutton1);
+loginWitUsername("ososa", "2022")
+  .then((resolved) => {
+    alert(resolved);
+  })
+  .catch((rejected) => {
+    alert(rejected);
+  });
+
+//
 
 let loginWitUsername = (username, password) => {
   return new Promise(function (resolve, rejected) {
