@@ -1,34 +1,4 @@
-// Ejercicio 1
-
-// Ejercicio 2
-
-// Ejercicio 3
-
-// Ejercicio 4
-
-// Ejercicio 5
-const Login = {
-  username: "admin",
-  password: "passwd",
-};
-//llamaremos a la función para que de el resultado correcto.
-function successlogin() {
-  const successbutton = document.getElementById("loginSuccess");
-  successbutton.addEventListener("click", Login);
-}
-successlogin.call(Login);
-
-//En el segundo crearemos un objeto login con parámetros incorrectos y llamaremos a login para que falle.
-const Login2 = {
-  username: "ososa",
-  password: "2022",
-};
-function faillogin() {
-  const failbutton = document.getElementById("loginFailure");
-  failbutton.addEventListener("click", Login);
-}
-faillogin.call(Login);
-// Ejercicio 6
+//Crea dos clickListener, para los botones con id loginSuccessAsync y loginFailureAsync.
 
 function Asyncbutton() {
   const SuccessAsync = document.getElementById("loginSuccessAsync");
@@ -53,6 +23,8 @@ function Asyncbutton1() {
       alert(rejected);
     });
 }
+
+//
 
 let loginWitUsername = (username, password) => {
   return new Promise(function (resolve, rejected) {
